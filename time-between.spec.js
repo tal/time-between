@@ -65,4 +65,30 @@ describe('timeBetween', () => {
       expect(hours).toEqual(48)
     })
   })
+
+  describe('specific bugs', () => {
+    it('should work for this odd error case was getting -4', () => {
+      var start = new Date('2017-02-18T03:30:00.000Z')
+      var end = new Date('2017-02-18T03:30:00.000Z')
+
+      var hours = timeBetween(start, end)
+      expect(hours).toEqual(0)
+    })
+
+    it('should work for this odd error case was getting -1', () => {
+      var start = new Date('2017-02-13T22:23:19.000Z')
+      var end = new Date('2017-02-14T13:51:48.000Z')
+
+      var hours = timeBetween(start, end)
+      expect(hours).toEqual(1)
+    })
+
+    it('should work for this odd error case was getting -2', () => {
+      var start = new Date('2017-02-14T13:51:48.000Z')
+      var end = new Date('2017-02-14T13:51:48.000Z')
+
+      var hours = timeBetween(start, end)
+      expect(hours).toEqual(0)
+    })
+  })
 })

@@ -28,8 +28,19 @@ module.exports = function hoursBetween(start, end, opts) {
     var startHour = isStart ? start.getHours() : 0
     var endHour = isEnd ? end.getHours() : 24
 
-    startHour = Math.max(startHour, dailyStart)
-    endHour = Math.min(endHour, dailyEnd)
+    // console.log({
+    //   startHour, dailyStart,
+    //   endHour, dailyEnd,
+    // })
+
+    startHour = Math.min(Math.max(startHour, dailyStart), dailyEnd)
+    endHour = Math.max(Math.min(endHour, dailyEnd), dailyStart)
+
+    // console.log({
+    //   start, end,
+    //   isStart, isEnd,
+    //   startHour, endHour,
+    // })
 
     return endHour - startHour
   }
