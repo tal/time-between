@@ -44,11 +44,7 @@ module.exports = function hoursBetween(start, end, opts) {
   var timeElapsed = 0
 
   while (currentDate.getTime() < endTime) {
-    timeElapsed += handleDate(
-      currentDate,
-      start,
-      end,
-    )
+    timeElapsed += handleDate(currentDate, start, end)
 
     currentDate.setDate(currentDate.getDate() + 1)
   }

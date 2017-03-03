@@ -1,6 +1,6 @@
 {
   "name": "time-between",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Measure the amount of time between two dates",
   "main": "time-between.js",
   "repository": "https://github.com/tal/time-between",
